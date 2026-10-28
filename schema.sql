@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS entries (id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY, description TEXT NOT NULL, category TEXT NOT NULL, kind TEXT NOT NULL CHECK (kind IN ('receita','despesa')), amount INTEGER NOT NULL CHECK (amount > 0), entry_date DATE NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT now());

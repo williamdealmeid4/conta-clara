@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: financas
+      POSTGRES_PASSWORD: financas_local
+      POSTGRES_DB: financas
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - financas_data:/var/lib/postgresql/data
+volumes:
+  financas_data:
